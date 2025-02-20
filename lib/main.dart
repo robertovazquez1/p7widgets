@@ -1,43 +1,37 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MiWidgets());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiWidgets extends StatelessWidget {
+  const MiWidgets({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text("Vazquez", style: TextStyle(color: Color(0xff1c8279))),
+            backgroundColor: Color(0xff161424),
+            centerTitle: true,
+            leading: Icon(Icons.remove_red_eye_outlined, color: Colors.white),
+          ),
+          body: const Column(
+            children: <Widget>[
+              Text('Roberto Vazquez',
+                  style: TextStyle(fontSize: 30, color: Color(0xff6a02cb))),
+              Text('Mat: 22308051281326 Gpo 6.-J',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.indigo,
+                      fontWeight: FontWeight.bold)),
+              Expanded(
+                child: FittedBox(
+                  child: FlutterLogo(),
+                ),
+              ),
+            ],
+          )),
+    ); //Material
+  } //Build
+} //Widgets
